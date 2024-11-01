@@ -1,0 +1,14 @@
+#barra-esquerda {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    background-color: orange;
+    z-index: 1;
+}
+#barra-esquerda {
+    left: 0;
+    width: 200px;
+}
+#botao-esquerdo {
+    posi
+}
