@@ -517,11 +517,42 @@ ul.email li i {
 
 .class_box {
      border-radius: 10px;
-     background: #f0390f;
+     background: #6FEEA4;
      margin-bottom: 58px;
      transition: ease-in all 0.5s;
      padding: 40px 50px 75px 50px;
 }
+
+.class_box2  {
+     border-radius: 10px;
+     background: #F6B456;
+     margin-bottom: 58px;
+     transition: ease-in all 0.5s;
+     padding: 40px 50px 75px 50px;
+}
+
+.class_box3  {
+     border-radius: 10px;
+     background: #E55A5A;
+     margin-bottom: 58px;
+     transition: ease-in all 0.5s;
+     padding: 40px 50px 75px 50px;
+}
+
+:root {
+     --primary-100: #ff3c00;
+     --primary-200: #ff6333;
+     --primary-300: #ff8a66;
+     --accent-100: #ffd700;
+     --accent-200: #ffd700;
+     --accent-300: #ffd700;
+     --background-100: #fffcfb;
+     --background-200: #ffe9e2;
+     --background-300: #ffd6c8;
+     --text-100: #3b0d00;
+     --text-200: #6e1800;
+     --text-300: #a12300;
+   }
 
 .class_box h3 {
      color: #fff;
