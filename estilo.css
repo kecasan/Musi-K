@@ -379,7 +379,7 @@ body {
 }
 
 .modal-button.secondary {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(2, 253, 15, 0.445);
     color: var(--text-primary);
 }
 

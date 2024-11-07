@@ -1,3 +1,4 @@
+// Cria a lista para armazenar os tópicos dos módulos da página inicial
 const modules = [
     {
         level: "basic",
@@ -34,6 +35,8 @@ const modules = [
     }
 ];
 
+
+// Cria a barra de progresso
 function createModules() {
     const container = document.getElementById('moduleContainer');
 
@@ -62,11 +65,13 @@ function createModules() {
     });
 }
 
+// Cria a função para armazenar a conclusão de um módulo inteiro
 function toggleComplete(element) {
     element.classList.toggle('completed');
     updateProgress(element.closest('.module'));
 }
 
+//Cria a função que atualiza a barra de progresso
 function updateProgress(moduleElement) {
     const topics = moduleElement.querySelectorAll('.topic-item');
     const completed = moduleElement.querySelectorAll('.topic-item.completed');
@@ -77,6 +82,7 @@ function updateProgress(moduleElement) {
     progressText.textContent = `${percentage}% Completo`;
 }
 
+//Cria a função para o as notas flutuantes
 function createFloatingNotes() {
     const container = document.getElementById('notesContainer');
     const notes = ['♪', '♫', '♬', '♭', '♮', '♯'];
@@ -96,11 +102,13 @@ function createFloatingNotes() {
     }, 2000);
 }
 
+//Adicionando o evento das notas flutuantes
 document.addEventListener('DOMContentLoaded', () => {
     createModules();
     createFloatingNotes();
 });
 
+//Criando pop-up com conteúdo do tópico
 function createModal(topic, level) {
     const modalContent = {
         basic: {
@@ -133,7 +141,7 @@ function createModal(topic, level) {
                     <p><strong>Pré-requisitos:</strong> ${modalContent[level].requirements}</p>
                 </div>
                 <div class="modal-actions">
-                    <button class="modal-button secondary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Fechar</button>
+                    <button class="modal-button secondary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Marque como concluído</button>
                     <button class="modal-button primary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Começar Lição</button>
                 </div>
             </div>
@@ -143,6 +151,8 @@ function createModal(topic, level) {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
 }
 
+
+//Ao concluir a atividade o estilo do tópico é alterado
 function updateTopicClickHandler() {
     const topicItems = document.querySelectorAll('.topic-item');
     topicItems.forEach(item => {
@@ -163,6 +173,7 @@ function updateTopicClickHandler() {
     });
 }
 
+
 function closeModalAndComplete(modalElement) {
     // Pegar o tópico do modal
     const topic = modalElement.getAttribute('data-topic');
@@ -179,6 +190,8 @@ function closeModalAndComplete(modalElement) {
     // Fechar o modal
     modalElement.style.display = 'none';
 }
+
+
 
 function updateProgress(moduleElement) {
     const topics = moduleElement.querySelectorAll('.topic-item');
