@@ -44,12 +44,12 @@ body {
 /* Menu profile */
 
 .menu {
-    width: 65%;  
+    width: 45%;  
     height: 100vh;
     background-color: #222d32; 
     color: #fff;
     position: absolute;
-    left: -65%;
+    left: -45%;
     transition: left .3s;
 }
 
@@ -182,7 +182,7 @@ body {
 }
 
 .__move .content {
-    left: 65%;
+    left: 45%;
     transition: left .3s;
 }
 
