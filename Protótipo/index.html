@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Responsivo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+            <div class="icon-menu">
+                <!-- <svg width="21.999999999999996" height="21.999999999999996" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <line stroke="#000" class="firstLine" y2="4.146656" x2="25.477124" y1="4.146656" x1="-1.973854"
+                            stroke-width="3.5" />
+                        <line stroke="#000" class="secondLine" y2="11.151682" x2="25.607844" y1="11.020963" x1="-2.104574"
+                            stroke-width="3.5" />
+                        <line stroke="#000" class="thirdLine" y2="17.804165" x2="24.852663" y1="17.673446" x1="-1.683284"
+                            stroke-width="3.5" />
+                    </g>
+                </svg> -->
+
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line class="firstline" x1="0" y1="5" x2="37" y2="5" stroke="white"/>
+                    <line class="secondline" y1="15" x2="30" y2="15" stroke="white"/>
+                    <line class="thirdline" y1="25" x2="37" y2="25" stroke="white"/>
+                </svg>
+                    
+            </div>
+        <div class="menu">
+            <nav class="navigation-menu">
+                <div class="profile">
+                    <span class="profile-img">
+                        <img src="img/user_img.png" alt="Imagem de perfil">    
+                    </span>
+                    <span>
+                        <p class="name">Guilherme Chinaglia</p>
+                        <p class="status">online</p>
+                    </span>
+                </div>
+                <ul class="list-nav">
+                    <li class="item-nav">
+                        <a class="link-nav link-nav-exemplo" href="#">
+                        <i class="fas fa-tachometer-alt icon"></i>
+                            Dashboard
+                        </a>    
+                    </li>
+                    <li class="item-nav">
+                        <a class="link-nav" href="#">
+                        <i class="fas fa-calendar-alt icon"></i>
+                            Calendário
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a class="link-nav link-nav-arrow" href="#">
+                        <i class="fas fa-book icon"></i>
+                            Documentações
+                        </a>
+                    </li>
+                    <ul class="list-nav-second hide">
+                        <li class="item-nav-second">
+                            <a href="#">
+                                Doc 1
+                            </a>
+                        </li>
+                        <li class="item-nav-second">
+                            <a href="#">
+                                Doc 2
+                            </a>
+                        </li>
+                    </ul>
+                    <li class="item-nav">
+                        <a class="link-nav" href="#">
+                        <i class="fas fa-cog icon"></i>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </nav><!-- Fim nav -->
+        </div><!-- Fim menu -->
+        <div class="content">
+            <div class="floating-notes" id="notesContainer"></div>
+
+            <header class="header">
+                <div class="animated-bg">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+                <div class="header-content">
+                    <div><img src="aula14\img\logo.png" width="150"></div>
+                    <h1>Musi-k</h1>
+                </div>
+            </header>
+            <section class="modules">
+                <div class="header">
+                <p>Desperte seu potencial musical através de uma jornada única de aprendizado</p>
+            </div>
+                <div class="module-container" id="moduleContainer"></div>
+            </section>
+                </div>
+    </div>
+    <script src="https://kit.fontawesome.com/892399f368.js" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
