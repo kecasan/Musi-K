@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musi-K</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="static\css\estilo.css">
     <link rel="shortcut icon" type="imagex/png" href="icon/icone.ico">
-    <script src="funcoes.js"></script>
+    <script src="static\js\funcoes.js"></script>
     
 </head>
 <body>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+
+<div class="menu_lateral" >
+    <img src="media\menu-branco.png" width="30" onclick="openNav()">
+</div>
+ 
+<div id="main">
+
     <div class="floating-notes" id="notesContainer"></div>
 
     <header class="header">
@@ -29,5 +43,7 @@
     </div>
         <div class="module-container" id="moduleContainer"></div>
     </section>
+
+</div>
 </body>
 </html>
