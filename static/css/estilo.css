@@ -30,6 +30,12 @@ body{
     overflow: hidden;
 }
 
+.header_login {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
 .animated-bg {
     position: absolute;
     top: 0;
@@ -473,3 +479,78 @@ body{
     padding: 15px;
     z-index: 1000;
 }
+
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  #login h2 {
+    color: #fff;
+    font-size: 40px;
+  }
+  
+  .card {
+    background-color: rgba(19, 19, 19, 0.3);
+    padding: 40px;
+    border-radius: 15px;
+    height: 480px;
+    width:480px;
+  }
+  
+  .card-header {
+    padding-bottom: 10px;
+    opacity: 0.8;
+    color: #fff;
+  }
+  
+  .card-content label {
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
+  .card-content-area {
+    display: flex;
+    flex-direction: column;
+    padding:10px 0;
+  }
+  
+  .card-content-area input {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: "white";
+    opacity: 0.8;
+    border:none;
+    border-bottom: 1px solid #e1e1e1;
+    outline: none;
+    color: #fff;
+  }
+  
+  .card-footer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-footer .submit{
+    width: 50%;
+    height: 40px;
+    
+    background-color: #a13854;
+    border:none;
+    color:#e1e1e1;
+    margin: 10px auto;
+    border-radius: 15px;
+  }
+  
+  .card-footer a {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+    color: #fff;
+    text-decoration: none;
+  }
