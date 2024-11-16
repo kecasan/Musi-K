@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Criando pop-up com conteúdo do tópico
-/*function createModal(topic, level) {
+function createModal(topic, level) {
     const modalContent = {
         basic: {
             description: "Aprenda os conceitos fundamentais que servirão como base para toda sua jornada musical.",
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     document.body.insertAdjacentHTML('beforeend', modalHTML);
-}*/
+}
 
 
 
