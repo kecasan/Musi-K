@@ -456,7 +456,7 @@ body{
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
+    font-size: 40px;
     margin-left: 50px;
   }
   
@@ -554,3 +554,11 @@ body{
     color: #fff;
     text-decoration: none;
   }
+
+.profile_img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+}
