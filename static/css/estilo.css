@@ -480,6 +480,10 @@ body{
     z-index: 1000;
 }
 
+.menu_opcoes {
+    font-size: 15px;
+}
+
 #login {
     display: flex;
     align-items: center;
@@ -494,19 +498,21 @@ body{
   }
   
   .card-login {
-    background-color: rgba(19, 19, 19, 0.3);
+    background-color: rgba(91, 91, 91, 0.3);
     padding: 40px;
     border-radius: 15px;
     height: 480px;
     width:480px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
   }
 
   .card-signup {
-    background-color: rgba(19, 19, 19, 0.3);
+    background-color: rgba(91, 91, 91, 0.3);
     padding: 40px;
     border-radius: 15px;
-    height: 480px;
-    width:500px;
+    height: 560px;
+    width:480px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
   }
   
   .card-header {
