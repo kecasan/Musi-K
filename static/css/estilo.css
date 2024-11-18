@@ -493,12 +493,20 @@ body{
     font-size: 40px;
   }
   
-  .card {
+  .card-login {
     background-color: rgba(19, 19, 19, 0.3);
     padding: 40px;
     border-radius: 15px;
     height: 480px;
     width:480px;
+  }
+
+  .card-signup {
+    background-color: rgba(19, 19, 19, 0.3);
+    padding: 40px;
+    border-radius: 15px;
+    height: 480px;
+    width:500px;
   }
   
   .card-header {
