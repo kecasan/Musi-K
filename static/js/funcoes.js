@@ -237,14 +237,14 @@ function createModules() {
     updateTopicClickHandler();
 }
 
-
+// Desliza a navbar para a direita e diminui a opacidade do conteúdo principal
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.opacity = "0.4";
+    document.body.style.opacity("main") = "0.4";
 }
-  
-  /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+
+// Desliza a navbar para a esquerda e retorna a opacidade do conteúdo principal
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
