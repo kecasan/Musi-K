@@ -1,6 +1,6 @@
 # Musi-K
 Projeto final do programa Transforme-se do Serasa Experian <br>
-Em parceria com Senac e Farol na Quebrada
+Em parceria com SenacDF e Farol na Quebrada
 
 Projeto: https://kecasan.github.io/Musi-K/
 
