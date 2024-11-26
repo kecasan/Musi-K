@@ -18,11 +18,29 @@
     <a href="login.html">Login</a>
     <a href="signup.html" class="menu_opcoes">Cadastro</a>
     </div>
-    <a href="#">Sobre</a>
+    <a href="#" id="about-link">Sobre</a>
 </div>
 
 <div class="menu_lateral" >
     <img src="media\menu-branco.png" width="30" onclick="openNav()">
+</div>
+
+<div class="modal-overlay" id="about-modal" style="display: none;">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div class="modal-header">
+            <h2 class="modal-title">Sobre a Musi-K</h2>
+        </div>
+        <div class="modal-content">
+            <p>A Musi-K é uma plataforma dedicada ao aprendizado musical, com o objetivo de ajudar os usuários a desenvolver seu potencial musical através de aulas interativas, conteúdos inspiradores e recursos especializados.</p>
+            <p><strong>Duração:</strong> Variável, conforme o conteúdo.</p>
+            <p><strong>Pré-requisitos:</strong> Nenhum pré-requisito necessário para iniciar sua jornada musical.</p>
+        </div>
+        <div class="modal-actions">
+            <button class="modal-button secondary" onclick="closeModal()">Fechar</button>
+            <button class="modal-button primary" onclick="startLesson()">Começar Lição</button>
+        </div>
+    </div>
 </div>
 
 <div id="main">

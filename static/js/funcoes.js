@@ -155,6 +155,7 @@ function createModal(topic, level) {
 
 
 
+
 //Ao concluir a atividade o estilo do tópico é alterado
 function updateTopicClickHandler() {
     const topicItems = document.querySelectorAll('.topic-item');
@@ -251,3 +252,22 @@ function closeNav() {
     document.body.style.backgroundColor = "black";
     document.body.style.opacity = "1";
 }
+
+
+document.getElementById('about-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Impede o link de recarregar a página
+    document.getElementById('about-modal').style.display = 'flex';
+    console.log("cjegou aqui1");
+});
+
+// Função para fechar o modal
+function closeModal() {
+    document.getElementById('about-modal').style.display = 'none';
+    console.log("cjegou aqui2");
+}
+
+// Função para começar a lição (exemplo)
+function startLesson() {
+    alert("A lição começou!");
+    closeModal(); // Fecha o modal ao começar a lição
+    }
