@@ -255,7 +255,7 @@ function closeNav() {
 
 
 document.getElementById('about-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Impede o link de recarregar a página
+    event.preventDefault(); 
     document.getElementById('about-modal').style.display = 'flex';
     console.log("cjegou aqui1");
 });
@@ -269,5 +269,5 @@ function closeModal() {
 // Função para começar a lição (exemplo)
 function startLesson() {
     alert("A lição começou!");
-    closeModal(); // Fecha o modal ao começar a lição
+    closeModal(); 
     }
