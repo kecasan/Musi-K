@@ -592,7 +592,7 @@ body{
     display: flex; /* Ativa o modelo de layout flexbox */
     justify-content: center; /* Alinha horizontalmente no centro */
     align-items: center; /* Alinha verticalmente no centro */
-    text-align: justify; /* Alinha o texto ao centro */
+    text-align: center; /* Alinha o texto ao centro */
     height: max-content; /* Ajusta a altura para 100% da altura da viewport */
     font-size: x-large;
     padding-right: 300px;
