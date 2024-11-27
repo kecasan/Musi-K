@@ -587,40 +587,19 @@ body{
 }
 
 
-#sobre1{
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: auto;
-  }
-
-.conteudo1{
-    
-    text-align: center;   
-    padding: 12px 24px;
-    border-radius: 15px;
-    border: none;
-    font-size: 1rem;
-    font-weight: 600;
-
-}
-
 #sobre {
   
     display: flex; /* Ativa o modelo de layout flexbox */
     justify-content: center; /* Alinha horizontalmente no centro */
     align-items: center; /* Alinha verticalmente no centro */
     text-align: justify; /* Alinha o texto ao centro */
-    height: 75vh; /* Ajusta a altura para 100% da altura da viewport */
+    height: max-content; /* Ajusta a altura para 100% da altura da viewport */
     font-size: x-large;
-    padding-right: 100px;
-    padding-left: 100px;
+    padding-right: 300px;
+    padding-left:300px;
+    padding-top: 100px;
+    padding-bottom: 135px;
     
-   
-   
     
 }
 
@@ -631,6 +610,8 @@ font-size: xx-large;
 justify-content: center;
 padding-right: 100px;
 padding-left: 100px;
+padding-block: 10px;
+padding-top: 108px;
 text-align: justify;
 height: auto;
 margin: auto;
