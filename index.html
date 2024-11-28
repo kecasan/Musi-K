@@ -9,6 +9,17 @@
     <script src="static\js\funcoes.js"></script>
     
 </head>
+    <body>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <img class="profile_img" src="media/user.png">
+            <p class="profile_name">Olá, Fulano</p>
+            <div>
+            <a href="login.html">Login</a>
+            <a href="signup.html" class="menu_opcoes">Cadastro</a>
+            </div>
+            <a href="#">Sobre</a>
+        </div>
 <body>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -22,6 +33,9 @@
     
 </div>
 
+        <div class="menu_lateral" >
+            <img src="media\menu-branco.png" width="30" onclick="openNav()">
+        </div>
 <div class="menu_lateral" >
     <img src="media\menu-branco.png" width="30" onclick="openNav()">
 </div>
@@ -44,28 +58,28 @@
     </div>
 </div>
 
-<div id="main">
+        <div id="main">
 
-    <div class="floating-notes" id="notesContainer"></div>
+            <div class="floating-notes" id="notesContainer"></div>
 
-    <header class="header">
-        <div class="animated-bg">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
+            <header class="header">
+                <div class="animated-bg">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+                <div class="header-content">
+                    <div><img src="media/logo.png" width="150"></div>
+                    <h1>Musi-k</h1>
+                </div>
+            </header>
+            <section class="modules">
+                <div class="header">
+                <p>Desperte seu potencial musical através de uma jornada única de aprendizado</p>
+            </div>
+                <div class="module-container" id="moduleContainer"></div>
+            </section>
+
         </div>
-        <div class="header-content">
-            <div><img src="media/logo.png" width="150"></div>
-            <h1>Musi-k</h1>
-        </div>
-    </header>
-    <section class="modules">
-        <div class="header">
-        <p>Desperte seu potencial musical através de uma jornada única de aprendizado</p>
-    </div>
-        <div class="module-container" id="moduleContainer"></div>
-    </section>
-
-</div>
-</body>
+    </body>
 </html>
