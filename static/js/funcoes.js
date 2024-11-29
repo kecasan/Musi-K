@@ -192,8 +192,8 @@ function createModules() {
         const moduleElement = document.createElement('div');
         moduleElement.className = `module ${module.level}`;
 
-        const topicsList = module.topics.map(topic => 
-            `<div class="topic-item" onclick="toggleComplete(this)">${topic}</div>`
+        const topicsList = module.topics.map(lesson => 
+            `<div class="topic-item" onclick="toggleComplete(this)">${lesson.name}</div>`
         ).join('');
 
         moduleElement.innerHTML = `
@@ -364,7 +364,7 @@ function createModules() {
         moduleElement.className = `module ${module.level}`;
 
         const lessonsList = module.lessons.map(lesson => 
-            `<div class="lesson-item" data-lesson="${lesson.name}">${lesson.name}</div>`
+            `<div class="lesson-item topic-item" data-lesson="${lesson.name}">${lesson.name}</div>`
         ).join('');
 
         moduleElement.innerHTML = `
@@ -451,3 +451,121 @@ function startLesson() {
     alert("A lição começou!");
     closeModal(); 
     }
+
+//=======================================================================================================
+// Funções para as perguntas e respostas
+
+function createMultipleChoiceModal(lesson) {
+    // Crie um conjunto de perguntas de múltipla escolha baseadas no conteúdo da lição
+    const questions = generateMultipleChoiceQuestions(lesson);
+    
+    const modalHTML = `
+        <div class="modal-overlay multiple-choice-modal" id="multiple-choice-modal">
+            <div class="modal">
+                <button class="modal-close" onclick="closeMultipleChoiceModal()">×</button>
+                <div class="modal-header">
+                    <h2 class="modal-title">Quiz - ${lesson.name}</h2>
+                </div>
+                <div class="modal-content">
+                    ${renderQuestions(questions)}
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-button primary" onclick="submitQuiz()">Enviar Respostas</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+}
+
+function generateMultipleChoiceQuestions(lesson) {
+    // Esta função geraria perguntas com base no conteúdo da lição
+    // Por exemplo:
+    return [
+        {
+            question: "Qual é o conceito principal desta lição?",
+            options: [
+                "Teoria Musical",
+                "Técnica Instrumental",
+                "História da Música",
+                "Produção Musical"
+            ],
+            correctAnswer: 0
+        },
+        // Mais perguntas...
+    ];
+}
+
+function renderQuestions(questions) {
+    return questions.map((q, index) => `
+        <div class="quiz-question">
+            <p>${index + 1}. ${q.question}</p>
+            ${q.options.map((option, optIndex) => `
+                <label class="multiple-choice-option">
+                    <input type="radio" name="question-${index}" value="${optIndex}">
+                    ${option}
+                </label>
+            `).join('')}
+        </div>
+    `).join('');
+}
+
+function submitQuiz() {
+    const questions = document.querySelectorAll('.quiz-question');
+    let score = 0;
+    let totalQuestions = questions.length;
+
+    questions.forEach((question, index) => {
+        const selectedOption = question.querySelector(`input[name="question-${index}"]:checked`);
+        if (selectedOption && 
+            parseInt(selectedOption.value) === generateMultipleChoiceQuestions(currentLesson)[index].correctAnswer) {
+            score++;
+        }
+    });
+
+    alert(`Você acertou ${score} de ${totalQuestions} perguntas!`);
+    closeMultipleChoiceModal();
+}
+
+function closeMultipleChoiceModal() {
+    const modal = document.getElementById('multiple-choice-modal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+// Modificar a função de clique da lição para adicionar o botão de quiz
+function updateLessonClickHandler() {
+    const lessonItems = document.querySelectorAll('.lesson-item');
+    lessonItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const lessonName = this.getAttribute('data-lesson');
+            const moduleLevel = this.closest('.module').classList[1];
+
+            // Localizar a lição correspondente
+            const module = modules.find(m => m.level === moduleLevel);
+            const lesson = module.lessons.find(l => l.name === lessonName);
+
+            if (lesson) {
+                currentLesson = lesson;  // Variável global para uso no quiz
+                createModal(lesson, moduleLevel);
+
+                // Adicionar botão de quiz ao modal
+                const modalActions = document.querySelector('.modal-actions');
+                const quizButton = document.createElement('button');
+                quizButton.className = 'modal-button primary';
+                quizButton.textContent = 'Fazer Quiz';
+                quizButton.onclick = () => createMultipleChoiceModal(lesson);
+                modalActions.appendChild(quizButton);
+            }
+        });
+    });
+}
+
+// Adicionar aos eventos de carregamento da página
+document.addEventListener('DOMContentLoaded', () => {
+    createModules();
+    createFloatingNotes();
+    updateLessonClickHandler();
+});

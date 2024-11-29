@@ -180,6 +180,8 @@ body{
     list-style: none;
 }
 
+
+
 .topic-item {
     background: rgba(255,255,255,0.05);
     margin: 10px 0;
@@ -711,5 +713,24 @@ padding-top: 108px;
 text-align: justify;
 height: auto;
 margin: auto;
+}
 
+/* Questionario */
+
+.multiple-choice-option {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.multiple-choice-option:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.multiple-choice-option input {
+    margin-right: 10px;
 }
