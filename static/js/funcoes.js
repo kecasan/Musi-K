@@ -268,6 +268,10 @@ function createModal(topic, level) {
     };
 
     const modalHTML = `
+    <div class="modal-actions">
+    <button class="modal-button secondary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Finalizar Aula</button>
+</div>
+
         <div class="modal-overlay" id="modal-${level}-${topicName.replace(/\s+/g, '-').toLowerCase()}" data-topic="${topicName}">
             <div class="modal">
                 <button class="modal-close" onclick="closeModalAndComplete(this.parentElement.parentElement)">×</button>
@@ -280,7 +284,9 @@ function createModal(topic, level) {
                         ${topicDetails.content || 'Conteúdo não disponível'}
                     </div><br>
                     <p><strong>Duração:</strong> ${topicDetails.duration}</p>
-
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-button primary" onclick="createMultipleChoiceModal()">Começar Lição</button>
                 </div>
                 <div class="modal-actions">
                     <button class="modal-button secondary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Finalizar Aula</button>
@@ -450,7 +456,7 @@ function closeModal() {
 function startLesson() {
     alert("A lição começou!");
     closeModal(); 
-    }
+}
 
 //=======================================================================================================
 // Funções para as perguntas e respostas
