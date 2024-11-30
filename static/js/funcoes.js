@@ -269,8 +269,8 @@ function createModal(topic, level) {
 
     const modalHTML = `
     <div class="modal-actions">
-    <button class="modal-button secondary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Finalizar Aula</button>
-</div>
+        <button class="modal-button secondary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Finalizar Aula</button>
+    </div>
 
         <div class="modal-overlay" id="modal-${level}-${topicName.replace(/\s+/g, '-').toLowerCase()}" data-topic="${topicName}">
             <div class="modal">
@@ -289,7 +289,7 @@ function createModal(topic, level) {
                     <button class="modal-button primary" onclick="createMultipleChoiceModal()">Começar Lição</button>
                 </div>
                 <div class="modal-actions">
-                    <button class="modal-button secondary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Finalizar Aula</button>
+                    <button class="modal-button secondary" onclick="closeModalAndComplete(this.parentElement.parentElement)">Finalizar Aula</button>
                 </div>
             </div>
         </div>
@@ -303,10 +303,6 @@ function createModal(topic, level) {
 
     document.body.insertAdjacentHTML('beforeend', modalHTML);
 }
-
-
-
-
 
 
 //Ao concluir a atividade o estilo do tópico é alterado
@@ -461,16 +457,16 @@ function startLesson() {
 //=======================================================================================================
 // Funções para as perguntas e respostas
 
-function createMultipleChoiceModal(lesson) {
+function createMultipleChoiceModal(lessons) {
     // Crie um conjunto de perguntas de múltipla escolha baseadas no conteúdo da lição
-    const questions = generateMultipleChoiceQuestions(lesson);
+    const questions = generateMultipleChoiceQuestions(lessons);
     
     const modalHTML = `
         <div class="modal-overlay multiple-choice-modal" id="multiple-choice-modal">
             <div class="modal">
                 <button class="modal-close" onclick="closeMultipleChoiceModal()">×</button>
                 <div class="modal-header">
-                    <h2 class="modal-title">Quiz - ${lesson.name}</h2>
+                    <h2 class="modal-title">Quiz - ${lessons.name}</h2>
                 </div>
                 <div class="modal-content">
                     ${renderQuestions(questions)}
