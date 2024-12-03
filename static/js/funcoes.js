@@ -282,6 +282,8 @@ function createModal(topic, level) {
                     </div><br>
                     <p><strong>Duração:</strong> ${topicDetails.duration}</p>
                 </div>
+                <div class="modal-actions">
+                </div>
             </div>
         </div>
     `;
