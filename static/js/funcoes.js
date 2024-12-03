@@ -268,9 +268,6 @@ function createModal(topic, level) {
     };
 
     const modalHTML = `
-    <div class="modal-actions">
-        <button class="modal-button secondary" onclick="closeModalAndComplete(this.closest('.modal-overlay'))">Finalizar Aula</button>
-    </div>
 
         <div class="modal-overlay" id="modal-${level}-${topicName.replace(/\s+/g, '-').toLowerCase()}" data-topic="${topicName}">
             <div class="modal">
@@ -284,12 +281,6 @@ function createModal(topic, level) {
                         ${topicDetails.content || 'Conteúdo não disponível'}
                     </div><br>
                     <p><strong>Duração:</strong> ${topicDetails.duration}</p>
-                </div>
-                <div class="modal-actions">
-                    <button class="modal-button primary" onclick="createMultipleChoiceModal()">Começar Lição</button>
-                </div>
-                <div class="modal-actions">
-                    <button class="modal-button secondary" onclick="closeModalAndComplete(this.parentElement.parentElement)">Finalizar Aula</button>
                 </div>
             </div>
         </div>
@@ -354,8 +345,8 @@ function updateProgress(moduleElement) {
     const progressText = moduleElement.querySelector('.progress-text');
     const percentage = Math.round((completed.length / topics.length) * 100);
     
-    progress.style.width = `${percentage}%`;
-    progressText.textContent = `${percentage}% Completo`;
+    //progress.style.width = `${percentage}%`;
+    //progressText.textContent = `${percentage}% Completo`;
 }
 
 function createModules() {
@@ -466,7 +457,7 @@ function createMultipleChoiceModal(lessons) {
             <div class="modal">
                 <button class="modal-close" onclick="closeMultipleChoiceModal()">×</button>
                 <div class="modal-header">
-                    <h2 class="modal-title">Quiz - ${lessons.name}</h2>
+                    <h2 class="modal-title">Quiz</h2>
                 </div>
                 <div class="modal-content">
                     ${renderQuestions(questions)}
@@ -486,14 +477,14 @@ function generateMultipleChoiceQuestions(lesson) {
     // Por exemplo:
     return [
         {
-            question: "Qual é o conceito principal desta lição?",
+            question: "Quais habilidades são importantes em técnicas avançadas?",
             options: [
-                "Teoria Musical",
-                "Técnica Instrumental",
-                "História da Música",
-                "Produção Musical"
+                "Conhecimento básico de escalas",
+                "Uso de intervalos distantes e domínios de diferentes estilos",
+                "Apenas tocar rápido",
+                "Evitar variações de dinâmica"
             ],
-            correctAnswer: 0
+            correctAnswer: 1
         },
         // Mais perguntas...
     ];
