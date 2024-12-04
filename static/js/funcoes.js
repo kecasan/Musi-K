@@ -285,8 +285,6 @@ function createModal(topic, level) {
                     </div><br>
                     <p><strong>Duração:</strong> ${topicDetails.duration}</p>
                 </div>
-                <div class="modal-actions">
-                </div>
             </div>
         </div>
     `;
@@ -476,10 +474,9 @@ function createMultipleChoiceModal(lessons) {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
 }
 
-function generateMultipleChoiceQuestions(lesson) {
+function generateMultipleChoiceQuestions(lessons) {
     // Esta função geraria perguntas com base no conteúdo da lição
     // Por exemplo:
-    console.log("chegou aqui111");
     return [
         {
             topic: "Introdução à Teoria Musical",
@@ -535,116 +532,6 @@ function generateMultipleChoiceQuestions(lesson) {
                 "Para garantir a afinação do instrumento"
             ],
             answer: 1
-        },
-        {
-            topic: "Composição Avançada",
-            question: "Qual é um elemento essencial na composição avançada?",
-            options: [
-                "Uso exclusivo de escalas maiores",
-                "Estrutura, harmonia e ritmo sofisticados",
-                "Improvisação sobre melodias simples",
-                "Exclusão de acordes menores"
-            ],
-            answer: 1
-        },
-        {
-            topic: "Produção Musical",
-            question: "Qual é o objetivo principal da produção musical?",
-            options: [
-                "Ensinar músicos a tocar mais rápido",
-                "Manipular ferramentas para criar o som desejado",
-                "Simplificar a composição de músicas clássicas",
-                "Desenvolver habilidades de improvisação"
-            ],
-            answer: 1
-        },
-        {
-            topic: "Orquestração",
-            question: "O que a orquestração envolve?",
-            options: [
-                "Criação de melodias simples",
-                "Organização de músicas para diferentes instrumentos",
-                "Improvisação com escalas e acordes",
-                "Composição exclusiva para piano"
-            ],
-            answer: 1
-        },
-        {
-            topic: "Performance Profissional",
-            question: "Qual é uma habilidade essencial para uma performance profissional?",
-            options: [
-                "Capacidade de tocar rápido",
-                "Conexão com o público e transmissão de emoções",
-                "Uso de técnicas básicas de composição",
-                "Exclusão de improvisações"
-            ],
-            answer: 1
-        },
-        {
-            topic: "Projetos Musicais",
-            question: "O que é fundamental para o sucesso de um projeto musical?",
-            options: [
-                "Improvisação constante",
-                "Planejamento, organização e execução da visão artística",
-                "Exclusão de instrumentos digitais",
-                "Foco apenas na performance ao vivo"
-            ],
-            answer: 1
-        },
-        {
-            topic: "Técnicas Avançadas",
-            question: "O que caracteriza as técnicas avançadas de composição?",
-            options: [
-                "Uso exclusivo de melodias simples",
-                "Aplicação de escalas complexas e intervalos distantes",
-                "Improvisação com bases harmônicas simples",
-                "Composição de músicas para iniciantes"
-            ],
-            answer: 1
-        },
-        {
-            topic: "Composição Básica",
-            question: "O que é foco principal na composição básica?",
-            options: [
-                "Criação de melodias e harmonias simples com estrutura clara",
-                "Desenvolvimento de técnicas de improvisação",
-                "Harmonia funcional em composições complexas",
-                "Exclusão de qualquer progressão harmônica"
-            ],
-            answer: 0
-        },
-        {
-            topic: "Harmonia Funcional",
-            question: "Qual é a função do acorde dominante na harmonia funcional?",
-            options: [
-                "Criar tensão e resolução",
-                "Estabelecer a tonalidade",
-                "Definir o ritmo da música",
-                "Manter a melodia linear"
-            ],
-            answer: 0
-        },
-        {
-            topic: "Improvisação",
-            question: "O que é essencial para improvisar com sucesso?",
-            options: [
-                "Conhecimento técnico e expressividade",
-                "Exclusão de harmonia funcional",
-                "Domínio de partituras clássicas",
-                "Uso exclusivo de escalas menores"
-            ],
-            answer: 0
-        },
-        {
-            topic: "Arranjos Musicais",
-            question: "O que é fundamental no arranjo musical?",
-            options: [
-                "Distribuição criativa das partes e uso de dinâmicas",
-                "Exclusão de instrumentos eletrônicos",
-                "Harmonia funcional baseada em acordes básicos",
-                "Improvisação durante a composição"
-            ],
-            answer: 0
         }
     ];
 }
