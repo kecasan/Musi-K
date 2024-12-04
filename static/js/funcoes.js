@@ -184,6 +184,8 @@ const modules = [
 ];
 
 
+
+
 // Cria a barra de progresso
 function createModules() {
     const container = document.getElementById('moduleContainer');
@@ -200,6 +202,7 @@ function createModules() {
             <h2>${module.title}</h2>
             <div class="topic-list">
                 ${topicsList}
+                
             </div>
             <div class="progress-container">
                 <div class="progress-bar">
@@ -366,7 +369,6 @@ function createModules() {
             <h2>${module.title}</h2>
             <div class="lesson-list">
                 ${lessonsList}
-            </div>
         `;
 
         container.appendChild(moduleElement);
@@ -456,12 +458,12 @@ function createMultipleChoiceModal(lessons) {
     
     const modalHTML = `
         <div class="modal-overlay multiple-choice-modal" id="multiple-choice-modal">
-            <div class="modal">
+            <div class="modal-quest">
                 <button class="modal-close" onclick="closeMultipleChoiceModal()">×</button>
                 <div class="modal-header">
                     <h2 class="modal-title">Quiz</h2>
                 </div>
-                <div class="modal-content">
+                <div class="modal-content-quest">
                     ${renderQuestions(questions)}
                 </div>
                 <div class="modal-actions">
@@ -477,18 +479,173 @@ function createMultipleChoiceModal(lessons) {
 function generateMultipleChoiceQuestions(lesson) {
     // Esta função geraria perguntas com base no conteúdo da lição
     // Por exemplo:
+    console.log("chegou aqui111");
     return [
         {
-            question: "Quais habilidades são importantes em técnicas avançadas?",
+            topic: "Introdução à Teoria Musical",
+            question: "Qual é a sequência correta das notas principais na música ocidental?",
             options: [
-                "Conhecimento básico de escalas",
-                "Uso de intervalos distantes e domínios de diferentes estilos",
-                "Apenas tocar rápido",
-                "Evitar variações de dinâmica"
+                "Dó, Ré, Mi, Fá, Sol, Lá, Dó",
+                "Dó, Ré, Fá, Mi, Sol, Lá, Si",
+                "Dó, Ré, Mi, Fá, Sol, Lá, Si",
+                "Ré, Mi, Fá, Sol, Lá, Si, Dó"
             ],
-            correctAnswer: 1
+            answer: 2 // índice correto da opção
         },
-        // Mais perguntas...
+        {
+            topic: "Ritmo e Tempo",
+            question: "Qual compasso possui 4 tempos em cada medida?",
+            options: [
+                "2/4",
+                "4/4",
+                "3/4",
+                "6/8"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Leitura de Partituras",
+            question: "Na partitura, em qual linha do pentagrama se encontra a nota Sol na clave de Sol?",
+            options: [
+                "Primeira linha",
+                "Segunda linha",
+                "Terceira linha",
+                "Quarta linha"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Melodia e Harmonia",
+            question: "O que define a harmonia em uma composição musical?",
+            options: [
+                "Sequência de notas tocadas de forma linear",
+                "Padrão de ritmos e compassos",
+                "Acordes tocados simultaneamente para apoiar a melodia",
+                "Velocidade com que as notas são tocadas"
+            ],
+            answer: 2
+        },
+        {
+            topic: "Prática Instrumental",
+            question: "Por que a postura correta é importante ao tocar um instrumento?",
+            options: [
+                "Para aumentar a velocidade das notas",
+                "Para evitar lesões e melhorar a execução",
+                "Para tocar em harmonia com outros instrumentos",
+                "Para garantir a afinação do instrumento"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Composição Avançada",
+            question: "Qual é um elemento essencial na composição avançada?",
+            options: [
+                "Uso exclusivo de escalas maiores",
+                "Estrutura, harmonia e ritmo sofisticados",
+                "Improvisação sobre melodias simples",
+                "Exclusão de acordes menores"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Produção Musical",
+            question: "Qual é o objetivo principal da produção musical?",
+            options: [
+                "Ensinar músicos a tocar mais rápido",
+                "Manipular ferramentas para criar o som desejado",
+                "Simplificar a composição de músicas clássicas",
+                "Desenvolver habilidades de improvisação"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Orquestração",
+            question: "O que a orquestração envolve?",
+            options: [
+                "Criação de melodias simples",
+                "Organização de músicas para diferentes instrumentos",
+                "Improvisação com escalas e acordes",
+                "Composição exclusiva para piano"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Performance Profissional",
+            question: "Qual é uma habilidade essencial para uma performance profissional?",
+            options: [
+                "Capacidade de tocar rápido",
+                "Conexão com o público e transmissão de emoções",
+                "Uso de técnicas básicas de composição",
+                "Exclusão de improvisações"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Projetos Musicais",
+            question: "O que é fundamental para o sucesso de um projeto musical?",
+            options: [
+                "Improvisação constante",
+                "Planejamento, organização e execução da visão artística",
+                "Exclusão de instrumentos digitais",
+                "Foco apenas na performance ao vivo"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Técnicas Avançadas",
+            question: "O que caracteriza as técnicas avançadas de composição?",
+            options: [
+                "Uso exclusivo de melodias simples",
+                "Aplicação de escalas complexas e intervalos distantes",
+                "Improvisação com bases harmônicas simples",
+                "Composição de músicas para iniciantes"
+            ],
+            answer: 1
+        },
+        {
+            topic: "Composição Básica",
+            question: "O que é foco principal na composição básica?",
+            options: [
+                "Criação de melodias e harmonias simples com estrutura clara",
+                "Desenvolvimento de técnicas de improvisação",
+                "Harmonia funcional em composições complexas",
+                "Exclusão de qualquer progressão harmônica"
+            ],
+            answer: 0
+        },
+        {
+            topic: "Harmonia Funcional",
+            question: "Qual é a função do acorde dominante na harmonia funcional?",
+            options: [
+                "Criar tensão e resolução",
+                "Estabelecer a tonalidade",
+                "Definir o ritmo da música",
+                "Manter a melodia linear"
+            ],
+            answer: 0
+        },
+        {
+            topic: "Improvisação",
+            question: "O que é essencial para improvisar com sucesso?",
+            options: [
+                "Conhecimento técnico e expressividade",
+                "Exclusão de harmonia funcional",
+                "Domínio de partituras clássicas",
+                "Uso exclusivo de escalas menores"
+            ],
+            answer: 0
+        },
+        {
+            topic: "Arranjos Musicais",
+            question: "O que é fundamental no arranjo musical?",
+            options: [
+                "Distribuição criativa das partes e uso de dinâmicas",
+                "Exclusão de instrumentos eletrônicos",
+                "Harmonia funcional baseada em acordes básicos",
+                "Improvisação durante a composição"
+            ],
+            answer: 0
+        }
     ];
 }
 
@@ -514,7 +671,7 @@ function submitQuiz() {
     questions.forEach((question, index) => {
         const selectedOption = question.querySelector(`input[name="question-${index}"]:checked`);
         if (selectedOption && 
-            parseInt(selectedOption.value) === generateMultipleChoiceQuestions(currentLesson)[index].correctAnswer) {
+            parseInt(selectedOption.value) === generateMultipleChoiceQuestions()[index].correctAnswer) {
             score++;
         }
     });
