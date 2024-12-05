@@ -322,7 +322,7 @@ function updateTopicClickHandler() {
 }
 
 
-function closeModalAndComplete(modalElement) {
+/*function closeModalAndComplete(modalElement) {
     // Pegar o tópico do modal
     const topic = modalElement.getAttribute('data-topic');
     
@@ -336,6 +336,27 @@ function closeModalAndComplete(modalElement) {
     });
     
     // Fechar o modal
+    modalElement.style.display = 'none';
+}*/
+
+function closeModalAndComplete(modalElement) {
+    // Remove blur/opacity
+    const mainContent = document.getElementById("main");
+    if (mainContent) {
+        mainContent.style.opacity = "1";
+    }
+
+    // Rest of existing close modal logic
+    const topic = modalElement.getAttribute('data-topic');
+    
+    const topicItems = document.querySelectorAll('.topic-item');
+    topicItems.forEach(item => {
+        if (item.textContent === topic) {
+            item.classList.add('completed');
+            updateProgress(item.closest('.module'));
+        }
+    });
+    
     modalElement.style.display = 'none';
 }
 
@@ -376,18 +397,48 @@ function createModules() {
 }
 
 // Desliza a navbar para a direita e diminui a opacidade do conteúdo principal
-function openNav() {
+/*function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
     document.body.style.opacity("main") = "0.4";
+}*/
+
+function openNav() {
+    const sideNav = document.getElementById("mySidenav");
+    const mainContent = document.getElementById("main");
+    const menuIcon = document.querySelector('.menu_lateral img');
+
+    sideNav.style.width = "250px";
+    mainContent.style.marginLeft = "250px";
+    mainContent.style.opacity = "0.4";
+    
+    // Hide menu icon when navbar is open
+    if (menuIcon) {
+        menuIcon.style.display = 'none';
+    }
 }
 
 // Desliza a navbar para a esquerda e retorna a opacidade do conteúdo principal
-function closeNav() {
+/*function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
     document.body.style.backgroundColor = "black";
     document.body.style.opacity = "1";
+}*/
+
+function closeNav() {
+    const sideNav = document.getElementById("mySidenav");
+    const mainContent = document.getElementById("main");
+    const menuIcon = document.querySelector('.menu_lateral img');
+
+    sideNav.style.width = "0";
+    mainContent.style.marginLeft = "0";
+    mainContent.style.opacity = "1";
+    
+    // Restore menu icon
+    if (menuIcon) {
+        menuIcon.style.display = 'block';
+    }
 }
 
 function updateLessonClickHandler() {
