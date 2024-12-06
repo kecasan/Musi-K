@@ -632,19 +632,23 @@ body{
 }*/
 
 .modal-overlay {
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(10, 10, 10, 0.8);
-    display: flex;
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(8px);
     z-index: 1000;
+    padding: 20px;
 }
-/*.modal {
+
+
+
+.modal {
     background: var(--bg-secondary);
     border-radius: 30px;
     padding: 40px;
@@ -653,7 +657,7 @@ body{
     position: relative;
     animation: modalFade 0.3s ease-out;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}*/
+}
 
 .modal-close {
     position: absolute;

@@ -357,7 +357,7 @@ function closeModalAndComplete(modalElement) {
         }
     });
     
-    modalElement.style.display = 'none';
+    modalElement.remove();
     updateProgressBar();
 }
 
@@ -484,13 +484,13 @@ function updateOverallProgress() {
 document.getElementById('about-link').addEventListener('click', function(event) {
     event.preventDefault(); 
     document.getElementById('about-modal').style.display = 'flex';
-    console.log("cjegou aqui1");
+    console.log("chegou aqui 1");
 });
 
 // Função para fechar o modal
 function closeModal() {
     document.getElementById('about-modal').style.display = 'none';
-    console.log("cjegou aqui2");
+    console.log("cjegou aqui 2");
 }
 
 // Função para começar a lição (exemplo)
