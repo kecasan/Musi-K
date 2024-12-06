@@ -539,7 +539,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "Dó, Ré, Mi, Fá, Sol, Lá, Si",
                 "Ré, Mi, Fá, Sol, Lá, Si, Dó"
             ],
-            answer: 0 // índice correto da opção
+            answer: 2 // índice correto da opção
         },
         {
             topic: "Ritmo e Tempo",
