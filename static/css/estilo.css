@@ -243,7 +243,7 @@ body{
     background: currentColor;
     width: 0%;
     transition: width 0.5s ease;
-    background-image: linear-gradient(to right, green 33%, blue 33% 66%, red 66% 100%);
+    background-image: linear-gradient(to right, #4cfd06 33%, #00bcd4 33% 66%, #f44336 66% 100%);
 }
 
 .progress-text {
