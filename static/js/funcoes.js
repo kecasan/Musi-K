@@ -358,6 +358,7 @@ function closeModalAndComplete(modalElement) {
     });
     
     modalElement.style.display = 'none';
+    updateProgressBar();
 }
 
 
@@ -538,7 +539,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "Dó, Ré, Mi, Fá, Sol, Lá, Si",
                 "Ré, Mi, Fá, Sol, Lá, Si, Dó"
             ],
-            answer: 2 // índice correto da opção
+            answer: 0 // índice correto da opção
         },
         {
             topic: "Ritmo e Tempo",
@@ -549,7 +550,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "3/4",
                 "6/8"
             ],
-            answer: 1
+            answer: 0
         },
         {
             topic: "Leitura de Partituras",
@@ -560,7 +561,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "Terceira linha",
                 "Quarta linha"
             ],
-            answer: 1
+            answer: 0
         },
         {
             topic: "Melodia e Harmonia",
@@ -571,7 +572,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "Acordes tocados simultaneamente para apoiar a melodia",
                 "Velocidade com que as notas são tocadas"
             ],
-            answer: 2
+            answer: 0
         },
         {
             topic: "Prática Instrumental",
@@ -582,7 +583,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "Para tocar em harmonia com outros instrumentos",
                 "Para garantir a afinação do instrumento"
             ],
-            answer: 1
+            answer: 0
         }
     ];
 }
@@ -662,3 +663,90 @@ document.addEventListener('DOMContentLoaded', () => {
     createFloatingNotes();
     updateLessonClickHandler();
 });
+
+let totalLessons = 5; // Total de lições
+let completedLessons = 0; // Lição completada
+
+function completeLesson() {
+    if (completedLessons < totalLessons) {
+        completedLessons++;
+        updateProgressBar();
+    } else {
+        alert("Todas as lições já foram completadas!");
+    }
+}
+
+
+
+
+
+// Função para calcular o progresso geral dos módulos
+function updateOverallProgress() {
+    const moduleContainer = document.getElementById('moduleContainer');
+    const progressBar = document.querySelector('.progress');
+    const progressText = document.querySelector('.progress-text');
+
+    // Conte o número total de tópicos e tópicos concluídos
+    const totalTopics = moduleContainer.querySelectorAll('.topic-item').length;
+    const completedTopics = moduleContainer.querySelectorAll('.topic-item.completed').length;
+
+    // Calcule a porcentagem
+    const progressPercentage = (completedTopics / totalTopics) * 100;
+
+    // Atualize a barra de progresso
+    progressBar.style.width = `${progressPercentage}%`;
+    progressText.textContent = `${Math.round(progressPercentage)}%`;
+
+    // Opcional: Salvar progresso no localStorage
+    localStorage.setItem('moduleProgress', progressPercentage);
+}
+
+// Função para marcar um tópico como concluído
+function markTopicAsCompleted(topicElement) {
+    topicElement.classList.add('completed');
+    updateOverallProgress();
+}
+
+// Função para carregar o progresso salvo (se existir)
+function loadSavedProgress() {
+    const savedProgress = localStorage.getItem('moduleProgress');
+    if (savedProgress) {
+        const progressBar = document.querySelector('.progress');
+        const progressText = document.querySelector('.progress-text');
+        
+        progressBar.style.width = `${savedProgress}%`;
+        progressText.textContent = `${Math.round(savedProgress)}%`;
+    }
+}
+
+// Chame esta função quando a página carregar
+document.addEventListener('DOMContentLoaded', loadSavedProgress);
+
+
+
+function updateProgressBar() {
+    const modules = document.querySelectorAll('.module');
+    let totalTopics = 0;
+    let completedTopics = 0;
+
+    modules.forEach(module => {
+        const topicItems = module.querySelectorAll('.lesson-item');
+        const completedItems = module.querySelectorAll('.lesson-item.completed');
+        
+        totalTopics += topicItems.length;
+        completedTopics += completedItems.length;
+    });
+
+    const progressPercentage = Math.round((completedTopics / totalTopics) * 100);
+    
+    const progressBar = document.querySelector('.progress');
+    const progressText = document.querySelector('.progress-text');
+    
+    if (progressBar && progressText) {
+        progressBar.style.width = `${progressPercentage}%`;
+        progressText.textContent = `${progressPercentage}% Completo`;
+    }
+
+    // Optional: Save progress to localStorage
+    localStorage.setItem('moduleProgress', progressPercentage);
+}
