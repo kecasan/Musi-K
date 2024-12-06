@@ -1,0 +1,35 @@
+CREATE TABLE usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    senha VARCHAR(255),
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE conteudo (
+    id_conteudo INT AUTO_INCREMENT PRIMARY KEY,
+    nivel ENUM('basic', 'intermediate', 'advanced'),
+    titulo VARCHAR(200),
+    descricao TEXT,
+    duracao VARCHAR(50),
+    data_publicacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    id_usuario INT,
+    tipo ENUM('musica', 'video', 'artigo'),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
+
+CREATE TABLE questao (
+    id_questao INT AUTO_INCREMENT PRIMARY KEY,
+    pergunta TEXT,
+    resposta TEXT,
+    id_conteudo INT,
+    FOREIGN KEY (id_conteudo) REFERENCES conteudo(id_conteudo)
+);
+
+CREATE TABLE admin (
+    id_admin INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    senha VARCHAR(255),
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
+);
