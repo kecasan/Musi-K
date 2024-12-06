@@ -608,9 +608,12 @@ function submitQuiz() {
 
     questions.forEach((question, index) => {
         const selectedOption = question.querySelector(`input[name="question-${index}"]:checked`);
-        if (selectedOption && 
-            parseInt(selectedOption.value) === generateMultipleChoiceQuestions()[index].correctAnswer) {
-            score++;
+        if (selectedOption) {
+            const selectedValue = parseInt(selectedOption.value);
+            const correctAnswer = generateMultipleChoiceQuestions()[index].answer; // Corrigido para usar 'answer'
+            if (selectedValue === correctAnswer) {
+                score++;
+            }
         }
     });
 
