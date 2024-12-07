@@ -35,9 +35,27 @@ body{
     position: relative;
     text-align: center;
     overflow: hidden;
+    padding: 20px; /* Adicione um padding para melhor espaçamento */
+}
+
+.img {
+    max-width: 100%; /* Garante que as imagens não ultrapassem a largura do container */
+    height: auto; /* Mantém a proporção */
 }
 
 .animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.sobre-bg {
+    background-size: cover; /* Faz com que a imagem cubra toda a tela */
+    display: flex; /* Usado para centralizar conteúdo se necessário */
     position: absolute;
     top: 0;
     left: 0;
@@ -262,6 +280,27 @@ body{
     }
     .circle {
         filter: blur(40px);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    #sobre {
+        margin: 10px; /* Menos margem em telas menores */
+    }
+
+    .header_login {
+        padding: 10px; /* Menos padding em telas menores */
+    }
+
+    p {
+        font-size: 14px; /* Fonte menor em telas menores */
+    }
+}
+
+@media (min-width: 601px) {
+    p {
+        font-size: 16px; /* Tamanho de fonte padrão para telas maiores */
     }
 }
 
@@ -700,38 +739,19 @@ body{
 
 
 #sobre {
-  
-    position: relative;
-    overflow: hidden;
-    display: grid; /* Ativa o modelo de layout flexbox */
-    justify-content: center; /* Alinha horizontalmente no centro */
-    align-items: center; /* Alinha verticalmente no centro */
-    text-align: center; /* Alinha o texto ao centro */
-    height: max-content; /* Ajusta a altura para 100% da altura da viewport */
-    font-size: x-large;
-    padding-right: 300px;
-    padding-left:300px;
-    padding-top: 122px;
-    padding-bottom: 135px;
-    
-    
-    
+    padding: 20px;
+    border-radius: 5px; /* Bordas arredondadas */
+    margin: 20px; /* Margem para espaçamento */
 }
 
 #mk1 {
-color: #00bcd4;
-display: grid;
-font-size: xx-large;
-justify-content: center;
-padding-right: 100px;
-padding-left: 100px;
-padding-block: 10px;
-padding-top: 108px;
-text-align: justify;
-height: auto;
-margin: auto;
+    color: #00bcd4;
+    font-size: 5vw; /* Responsivo */
+    padding: 10px 5%; /* Ajuste em porcentagem */
+    text-align: center; /* Centraliza o texto */
+    margin: 10px auto; /* Centraliza na horizontal */
+    max-width: 800px; /* Largura máxima */
 }
-
 /* Questionario */
 
 .multiple-choice-option {
