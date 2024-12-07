@@ -550,7 +550,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "3/4",
                 "6/8"
             ],
-            answer: 0
+            answer: 1
         },
         {
             topic: "Leitura de Partituras",
@@ -561,7 +561,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "Terceira linha",
                 "Quarta linha"
             ],
-            answer: 0
+            answer: 1
         },
         {
             topic: "Melodia e Harmonia",
@@ -572,7 +572,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "Acordes tocados simultaneamente para apoiar a melodia",
                 "Velocidade com que as notas são tocadas"
             ],
-            answer: 0
+            answer: 2
         },
         {
             topic: "Prática Instrumental",
@@ -583,7 +583,7 @@ function generateMultipleChoiceQuestions(lessons) {
                 "Para tocar em harmonia com outros instrumentos",
                 "Para garantir a afinação do instrumento"
             ],
-            answer: 0
+            answer: 1
         }
     ];
 }
