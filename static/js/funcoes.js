@@ -1,4 +1,6 @@
 // Cria a lista para armazenar os tópicos dos módulos da página inicial
+console.log('funcoes.js carregado');
+
 const modules = [
     {
         level: "basic",

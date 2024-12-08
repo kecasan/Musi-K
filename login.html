@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static\css\estilo.css">
-    <script src="static\js\funcoes.js"></script>
+    <link rel="stylesheet" href="static/css/estilo.css">
+    <script src="static/js/funcoes.js"></script>
+    <script src="script.js" defer></script> <!-- Atribuir defer para garantir que o JS seja carregado depois do HTML -->
+
     <title>Login</title>
 </head>
 <body>
@@ -16,7 +18,7 @@
             <div class="circle circle-3"></div>
         </div>
         <div id="login">
-            <form class="card-login">
+            <form class="card-login" id="login-form">
                 <img src="media/logo.png" width="90">
                 <div class="card-header">
                     <h2>Entrar</h2>
@@ -24,16 +26,15 @@
                 <div class="card-content">
                     <div class="card-content-area">
                         <label for="usuario">E-mail</label>
-                        <input type="text" id="usuario" name="email" autocomplete="off">
+                        <input type="text" id="login-email" autocomplete="off">
                     </div>
                     <div class="card-content-area">
                         <label for="password">Senha</label>
-                        <input type="password" id="password" autocomplete="off">
+                        <input type="password" id="login-senha" autocomplete="off">
                     </div>
                 </div>
                 <div class="card-footer">
-                    <input type="submit" value="login" class="submit">
-                    <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
+                    <button type="submit" id="verificarValores" class="submit">Login</button>
                 </div>
             </form>
         </div>

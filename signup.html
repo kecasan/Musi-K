@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static\css\estilo.css">
     <script src="static\js\funcoes.js"></script>
+    <script src="script.js"></script>
     <title>Sign up</title>
 </head>
 <body>
@@ -15,8 +16,8 @@
             <div class="circle circle-2"></div>
             <div class="circle circle-3"></div>
         </div>
-        <div id="login">
-            <form class="card-signup">
+        <div id="cadastrar">
+            <form id="character-form" class="card-signup">
                 <img src="media/logo.png" width="90">
                 <div class="card-header">
                     <h2>Cadastro</h2>
@@ -24,25 +25,24 @@
                 <div class="card-content">
                     <div class="card-content-area">
                         <label for="usuario">Nome</label>
-                        <input type="text" id="usuario" autocomplete="off">
+                        <input type="text" id="nome" autocomplete="off">
                     </div>
                     <div class="card-content-area">
                         <label for="usuario">E-mail</label>
-                        <input type="text" id="usuario" autocomplete="off">
+                        <input type="text" id="email" autocomplete="off">
                     </div>
 
                     <div class="card-content-area">
                         <label for="password">Senha</label>
-                        <input type="password" id="password" autocomplete="off">
+                        <input type="password" id="senha" autocomplete="off">
                     </div>
                 </div>
                 <div class="card-footer">
-                    <input type="submit" value="login" class="submit">
-                    <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
+                    <a href="login.html">Já possui uma conta? Faça login</a>
+                    <button type="submit" id="cadastrar2" class="submit">Cadastrar</button>
                 </div>
             </form>
         </div>
     </div>
-    
 </body>
 </html>

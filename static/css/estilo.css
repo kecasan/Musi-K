@@ -518,11 +518,13 @@ body{
     justify-content: center;
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1;
   }
 
   #login h2 {
     color: #fff;
     font-size: 40px;
+    z-index: 1;
   }
   
   .card-login {
@@ -532,6 +534,7 @@ body{
     height: 480px;
     width:480px;
     box-shadow: 0 0 30px rgba(255,255,255,0.1);
+    z-index: 1;
   }
 
   .card-signup {
@@ -541,24 +544,28 @@ body{
     height: 560px;
     width:480px;
     box-shadow: 0 0 30px rgba(255,255,255,0.1);
+    z-index: 1;
   }
   
   .card-header {
     padding-bottom: 10px;
     opacity: 0.8;
     color: #fff;
+    z-index: 1;
   }
   
   .card-content label {
     color: #fff;
     font-size: 12px;
     opacity: 0.8;
+    z-index: 1;
   }
   
   .card-content-area {
     display: flex;
     flex-direction: column;
     padding:10px 0;
+    z-index: 1;
   }
   
   .card-content-area input {
@@ -571,22 +578,24 @@ body{
     border-bottom: 1px solid #e1e1e1;
     outline: none;
     color: #000000;
+    z-index: 1;
   }
   
   .card-footer {
     display: flex;
     flex-direction: column;
+    z-index: 1;
   }
   
   .card-footer .submit{
     width: 50%;
     height: 40px;
-    
     background-color: #a13854;
     border:none;
     color:#e1e1e1;
     margin: 10px auto;
     border-radius: 15px;
+    z-index: 1000;
   }
   
   .card-footer a {
@@ -595,6 +604,7 @@ body{
     opacity: 0.8;
     color: #fff;
     text-decoration: none;
+    z-index: 1;
   }
 
 .profile_img {
