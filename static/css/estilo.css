@@ -512,6 +512,12 @@ body{
     font-size: 15px;
 }
 
+.voltar {
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
 #login {
     display: flex;
     align-items: center;

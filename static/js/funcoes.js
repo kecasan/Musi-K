@@ -752,3 +752,10 @@ function updateProgressBar() {
     // Optional: Save progress to localStorage
     localStorage.setItem('moduleProgress', progressPercentage);
 }
+
+function voltarIndex() {
+    const voltar = document.getElementById("voltar");
+    voltar.addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
+}
