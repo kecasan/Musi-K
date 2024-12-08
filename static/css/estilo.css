@@ -533,6 +533,15 @@ body{
     z-index: 1;
   }
   
+  .cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1;
+  }
+
   .card-login {
     background-color: rgba(91, 91, 91, 0.3);
     padding: 40px;
